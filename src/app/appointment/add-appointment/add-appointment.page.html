@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+    <ion-title>Add Appointment
+        <button class="addBtn" type="button" (click)='onCancel()'><ion-icon name="arrow-back"></ion-icon></button>
+  </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-grid>
+    <form [formGroup]="addappointment" (ngSubmit)="onSubmit()">
+
+        <ion-label> Patient Name </ion-label>
+        <ion-select  placeholder="Select Patient Name" formControlName='patientname' interface="popover" (ionChange)="displayMobileNumber($event)">
+          <ion-select-option *ngFor="let data of patients" [value]="data" >{{data.name}}</ion-select-option>
+        </ion-select>
+
+         <ion-label>Mobile Number </ion-label> 
+        <ion-input  readonly formControlName='mobileNo'>{{mobilenumber}}</ion-input> 
+
+        <ion-label stacked>Doctor Name</ion-label>
+        <ion-select name="lab" placeholder="Select Doctor" formControlName='doctorname' interface="popover">
+          <ion-select-option  *ngFor="let data of doctors">{{data.name}}</ion-select-option>
+        </ion-select>
+  
+      <ion-item>
+          <!-- <ion-label>Appointment Date</ion-label>  -->
+          <ejs-datepicker  value='dateValue' format='yyyy-MM-dd' formControlName="appointDate" [min]="minDate" placeholder='Appointment Date'></ejs-datepicker>
+        </ion-item>
+      <div padding>
+        <ion-button type="submit" size="medium" expand="block">Submit</ion-button>
+        
+      </div>
+    </form>
+   
+  </ion-grid>
+</ion-content>

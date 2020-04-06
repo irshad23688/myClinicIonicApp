@@ -1,0 +1,123 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+      <ion-title>View patient</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ionContent">
+  <div id="aspect-content">
+    <div class="aspect-tab " *ngFor="let data of arrpush;let i = index">
+      <input id="item-{{i}}" type="checkbox" class="aspect-input" name="aspect">
+      <label for="item-{{i}}" class="aspect-label"></label>
+      
+      <div class="aspect-content">
+          <div class="aspect-info">
+              
+              <span class="aspect-name">{{data.name}}</span>
+          </div>
+         
+      </div>
+      <div class="aspect-tab-content">
+          <div class="sentiment-wrapper">
+              <div>
+                  <div>
+                      <div class="opinion-header">
+                          <span>patient detail</span>
+                          <!-- <span>4</span> -->
+                      </div>
+                      <div>
+                        <span><b>Age:{{data.age}}</b></span><br>
+                        <span><b>Gender:{{data.gender}}</b> </span><br> 
+                       <span><b>Mobile No:{{data.mobileNo}}</b> </span><br>
+                       <span><b>Email:{{data.email}}</b> </span><br>
+                       <span><b>Address:{{data.address}}</b> </span>
+                          
+                       
+                      </div>
+                  </div>
+              </div>
+              <div>
+                  <div>
+                      <div class="opinion-header">
+                          <span>Admission</span>
+                          <button class='historyBtn'  routerLink="/admissionhistory/{{patientKey}}">History</button>
+                        
+                      </div>
+                      <form [formGroup]="viewpatient"  (ngSubmit)="onSubmit()">
+                    
+                        <ejs-datepicker  value='fromDateValue' formControlName="fromdate" format='yyyy-MM-dd'  [min]="minDate" placeholder='From Date'  ></ejs-datepicker><br>
+                        <ejs-datepicker value='toDateValue' formControlName="todate"  format='yyyy-MM-dd'  [min]="minDate" placeholder='To Date'  ></ejs-datepicker><br>
+                        
+                          
+                        <ion-item>
+                          <ion-label> Diagnostic</ion-label>
+                          <ionic-selectable formControlName="disease"
+                          
+                            [items]="diseases"
+                            itemValueField="key"
+                            itemTextField="name"
+                            [canSearch]="true"
+                            [isMultiple]="true"
+                            (onChange)="portChange($event)">
+                          </ionic-selectable>
+                        </ion-item>  
+  
+                         
+                        <ion-item>
+                          <ion-label position="floating">Treatment</ion-label>
+                          <ion-input formControlName='treatment'></ion-input>
+                        </ion-item><br>
+                        <ion-item>
+                        <ion-label position="floating">Amount</ion-label>
+                        <ion-input formControlName='amount'></ion-input>
+                      </ion-item><br>
+                        <button class="submitBtn">submit</button>
+                     
+                    </form> 
+                  </div>
+              </div>
+              <!-- <div> -->
+                  <!-- <div> -->
+                      <!-- <div class="negative-count opinion-header">
+                          <span>treament</span>
+                         
+                      </div> -->
+                      <!-- <div> -->
+                  
+  <!--                      
+                        <ion-item>
+                          <ion-label> Diagnostic</ion-label>
+                          <ionic-selectable
+                            [(ngModel)]="diseas"
+                            [items]="diseases"
+                            itemValueField="id"
+                            itemTextField="name"
+                            [canSearch]="true"
+                            [isMultiple]="true"
+                            (onChange)="portChange($event)">
+                          </ionic-selectable>
+                        </ion-item>  -->
+  
+                         
+                        <!-- <ion-item>
+                          <ion-label position="floating">Treatment</ion-label>
+                          <ion-input formControlName='treatment'></ion-input>
+                        </ion-item><br>
+  
+                        <button class="submitBtn">submit</button> -->
+                        <!-- </div>
+                          </div> -->
+                      <!-- </div> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+    <!-- </div> -->
+     
+  <!-- </div> -->
+  </ion-content>
+  
+  

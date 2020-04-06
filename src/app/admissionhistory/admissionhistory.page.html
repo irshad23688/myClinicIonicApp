@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+     </ion-buttons>
+    <ion-title>Admission History</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="formCard" *ngFor="let data of historydetail " >
+        <ion-row>
+            <ion-col col-4 no-padding>
+                <h6 class="item-name">From Date:<strong>{{data.fromdate}}</strong></h6>
+            </ion-col>
+        </ion-row>
+            <ion-row>
+            <ion-col col-4 no-padding>
+                <h6 class="item-name">To Date:<strong>{{data.todate}}</strong></h6>
+            </ion-col>
+            </ion-row>
+          <ion-row>
+            <ion-col col-4 no-padding >
+              <h6 class="item-name">Diagnosis:<strong *ngFor="let data of data.disease;let isLast=last">{{data.name}}{{isLast ? '' : ', '}}</strong></h6>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-4 no-padding>
+                <h6 class="item-name">Treatment:<strong>{{data.treatment}}</strong></h6>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-4 no-padding>
+                <h6 class="item-name">Amount:<strong>{{data.amount}}</strong></h6>
+            </ion-col>
+        </ion-row>
+        
+
+    </ion-card>
+
+</ion-content>

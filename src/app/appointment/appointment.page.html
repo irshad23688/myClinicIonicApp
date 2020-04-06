@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>
+        Appointment
+        <button class="addBtn" routerLink="/add-appointment">Book</button>
+    </ion-title>
+   
+  </ion-toolbar>
+ </ion-header>
+   <ion-content>
+      <div *ngFor="let data of tableData">
+          <ion-card class="appoint-item">
+                <h6>Doctor Name: <strong>{{data.doctorname}}</strong></h6>
+                  <ion-row>
+                      <ion-col col-4 no-padding>
+                          <h6 class="item-name">Patient Name:<strong>{{data.patientname}}</strong>
+                            <button class="viewBtn" routerLink="/view-patient/{{data.patientKey}}"> <ion-icon  style="color:grey" name="eye"></ion-icon></button>  
+                          </h6> 
+                      </ion-col>
+
+                  </ion-row>
+                  <ion-row>
+                      <ion-col col-4 no-padding>
+                          <h6 class="item-name">Mobile Number:<strong>{{data.mobileNo}}</strong></h6>
+                      </ion-col>
+                      
+                  </ion-row>
+                  <ion-row>
+                      <ion-col col-4 no-padding>
+                          <h6 class="item-name">Appointment Date:<strong>{{data.appointDate}}</strong></h6>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col col-6 no-padding>
+                          <h6 class="status" >Status: <strong [ngClass]=" {'completed': data.status==='Completed','booked':data.status==='Booked' , 'cancelled':data.status==='Cancelled'}">{{data.status}}</strong></h6>
+                      </ion-col>
+                      <ion-col col-6 no-padding>
+                          <ion-select  placeholder="Select Action" (ionChange)="updateStatus(data.key, $event)"   [hidden]= "data.status=='Completed'" interface="popover">
+                            <ion-select-option value="Booked">Booked</ion-select-option>
+                            <ion-select-option value="Completed">Completed</ion-select-option>
+                            <ion-select-option value="Cancelled">Cancelled</ion-select-option>
+                          </ion-select>
+                      </ion-col>
+                  </ion-row>
+          </ion-card>
+        </div>
+        <div padding [hidden]='showMessage' class="nolistMsg">No records to display. Please click on 'add' to add Appointment</div>
+        
+</ion-content>
+
+

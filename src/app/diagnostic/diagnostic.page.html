@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+    <ion-title>Diagnosis
+      <button class="addBtn" type="button" (click)='addBtn()'[hidden]="showForm"><ion-icon name="add-circle"></ion-icon></button>
+      <button class="addBtn" type="button" (click)='backBtn()' [hidden]="!showForm"><ion-icon name="arrow-back"></ion-icon></button>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="textAlign">
+  <form [formGroup]="diagnostic" (ngSubmit)="logForm()" [hidden]="!showForm">
+      <ion-card class="formCard">
+    <ion-item class="formList">
+      <ion-label position="floating" >Name</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+    <button class="submit" type="submit" >Submit</button><br><br>
+  </ion-card>
+  </form> 
+   <div [hidden]='showMessage' class="nolistMsg">No records to display. Please click on 'add' to add Diagnosis</div>
+      <ion-card class="listCard" [hidden]="showForm" *ngFor="let data of diagnosis ">
+      <div>
+          <span><b>Name</b>:{{data.name}}</span><br>
+      </div>
+  </ion-card>
+</ion-content>

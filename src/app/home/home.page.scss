@@ -1,0 +1,26 @@
+// // .transition {
+// //   background: linear-gradient(to right, #f57c00 14%, #ffca00 96%);
+// //   color: "white";
+// // }
+// .error {
+//   color: red;
+//   text-align: center;
+//   display: block;
+//   font-weight: bold;
+// }
+
+.formList {
+  // width: 90%;
+  // border: 1px solid grey;
+  margin: 10px auto;
+  --border-color: var(--ion-color, black);
+
+}
+
+.submit {
+  background-color: #2dd36f !important;
+  // border-radius: 8px;
+  padding: 10px 10px;
+  width: 20%;
+  color: white;
+}

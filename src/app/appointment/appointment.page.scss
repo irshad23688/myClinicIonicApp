@@ -1,0 +1,65 @@
+ .addBtn{
+    float: right;
+    background-color: #ff6c00;
+    font-size: 18px;
+    border-radius: 8px;
+    // width:25%;
+    color: white;
+    height: 30px;
+}
+.backBtn{
+    float: right;
+    background-color: rgba(54, 54, 235, 0.671);
+    font-size: 18px;
+    border-radius: 8px;
+    // width:25%;
+    color: white;
+    height: 30px;  
+}
+ion-col {
+//     border: solid 1px grey;
+//    font-size: 11px;
+//    text-align :left;
+ }
+
+ strong{
+     font: normal;
+     font-size: 15px;
+ }
+
+ .row-custom-bg:nth-of-type(even) {
+    background: green;
+}
+.row-custom-bg:nth-of-type(odd) {
+    background: blue;
+}
+.headercol {
+    background-color:lightgrey;
+  }
+  .cancelled{
+      color: red;
+  }
+  .completed{
+    color: green;
+}
+
+.booked{
+    color:orange;
+}
+
+.nolistMsg {
+    color: #555555 !important;
+    font-size: 12px;
+    margin: 200px auto;
+}
+
+.viewBtn{
+    float: right;
+    background-color: #c4c0bd;
+    font-size: 18px;
+    border-radius: 8px;
+    // width:25%;
+    color: white;
+    height: 30px; 
+    margin-right: 40px;
+}
