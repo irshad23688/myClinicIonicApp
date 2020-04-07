@@ -9,14 +9,14 @@
   
   <ion-content class="ionContent">
   <div id="aspect-content">
-    <div class="aspect-tab " *ngFor="let data of arrpush;let i = index">
+    <div class="aspect-tab "  *ngFor="let data of arrpush;let i = index">
       <input id="item-{{i}}" type="checkbox" class="aspect-input" name="aspect">
       <label for="item-{{i}}" class="aspect-label"></label>
       
-      <div class="aspect-content">
-          <div class="aspect-info">
+      <div class="aspect-content" class="collapse show">
+          <div class="aspect-info" >
               
-              <span class="aspect-name">{{data.name}}</span>
+              <span class="aspect-name" ><b></b></span>
           </div>
          
       </div>
@@ -25,15 +25,16 @@
               <div>
                   <div>
                       <div class="opinion-header">
-                          <span>patient detail</span>
+                          <h6><strong>Patient detail</strong> </h6>
                           <!-- <span>4</span> -->
                       </div>
-                      <div>
-                        <span><b>Age:{{data.age}}</b></span><br>
-                        <span><b>Gender:{{data.gender}}</b> </span><br> 
-                       <span><b>Mobile No:{{data.mobileNo}}</b> </span><br>
-                       <span><b>Email:{{data.email}}</b> </span><br>
-                       <span><b>Address:{{data.address}}</b> </span>
+                      <div class="detail">
+                        <span><b>Name:</b>{{data.name}}</span><br>
+                        <span><b>Age:</b>{{data.age}}</span><br>
+                        <span><b>Gender:</b>{{data.gender}} </span><br> 
+                       <span><b>Mobile No:</b>{{data.mobileNo}} </span><br>
+                       <span><b>Email:</b>{{data.email}} </span><br>
+                       <span><b>Address:</b>{{data.address}} </span>
                           
                        
                       </div>
@@ -42,7 +43,7 @@
               <div>
                   <div>
                       <div class="opinion-header">
-                          <span>Admission</span>
+                          <span><b>Admission</b></span>
                           <button class='historyBtn'  routerLink="/admissionhistory/{{patientKey}}">History</button>
                         
                       </div>

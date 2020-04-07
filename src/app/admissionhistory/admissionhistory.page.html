@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<!-- <ion-content>
     <ion-card class="formCard" *ngFor="let data of historydetail " >
         <ion-row>
             <ion-col col-4 no-padding>
@@ -38,4 +38,111 @@
 
     </ion-card>
 
-</ion-content>
+</ion-content> -->
+
+<ion-content class="ionContent">
+    <div id="aspect-content">
+        <!-- <div class="aspect-tab " *ngFor="let data of historydetail">
+          <input id="item-18" type="checkbox" class="aspect-input" name="aspect">
+          <label for="item-18" class="aspect-label"></label> -->
+
+           <div class="aspect-tab " *ngFor="let data of historydetail;let i = index">
+            <input id="{{i}}" type="checkbox" class="aspect-input" name="aspect">
+            <label for="{{i}}" class="aspect-label"></label>
+             
+          <div class="aspect-content">
+              <div class="aspect-info">
+                  <!-- <div class="chart-pie negative over50"> -->
+                      <!-- <span class="chart-pie-count">-69</span> -->
+                      <!-- <div>
+                          <div class="first-fill"></div>
+                          <div class="second-fill" style="transform: rotate(249deg)"></div>
+                      </div> -->
+                  <!-- </div> -->
+                  <span class="aspect-name">{{data.fromdate}}</span>
+              </div>
+              <!-- <div class="aspect-stat"> -->
+                  <!-- <div class="all-opinions">
+                      <span class="all-opinions-count">18</span>
+                      <span>opinion</span>
+                  </div> -->
+                  <!-- <div>
+                      <span class="positive-count">4</span>
+                      <span class="neutral-count">1</span>
+                      <span class="negative-count">13</span>
+                  </div> -->
+              <!-- </div> -->
+          </div>
+          <div class="aspect-tab-content">
+              <div class="sentiment-wrapper">
+                  <div>
+                      <div>
+                          <!-- <div class="positive-count opinion-header"> -->
+                              <!-- <span>positive</span>
+                              <span>4</span> -->
+                          <!-- </div> -->
+                          <div>
+                            <!-- <ion-card class="formCard" *ngFor="let data of historydetail " > -->
+                                <ion-row>
+                                    <ion-col col-4 no-padding>
+                                        <h6 class="item-name">From Date:<strong>{{data.fromdate}}</strong></h6>
+                                    </ion-col>
+                                </ion-row>
+                                    <ion-row>
+                                    <ion-col col-4 no-padding>
+                                        <h6 class="item-name">To Date:<strong>{{data.todate}}</strong></h6>
+                                    </ion-col>
+                                    </ion-row>
+                                  <ion-row>
+                                    <ion-col col-4 no-padding >
+                                      <h6 class="item-name">Diagnosis:<strong *ngFor="let data of data.disease;let isLast=last">{{data.name}}{{isLast ? '' : ', '}}</strong></h6>
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col col-4 no-padding>
+                                        <h6 class="item-name">Treatment:<strong>{{data.treatment}}</strong></h6>
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col col-4 no-padding>
+                                        <h6 class="item-name">Amount:<strong>{{data.amount}}</strong></h6>
+                                    </ion-col>
+                                </ion-row>
+                                
+                        
+                            <!-- </ion-card> -->
+                          </div>
+                      </div>
+                  </div>
+                  <!-- <div>
+                      <div>
+                          <div class="neutral-count opinion-header"> -->
+                              <!-- <span>neutral</span>
+                              <span>1</span> -->
+                          <!-- </div>
+                          <div>
+                              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id congue dolor. Vivamus eleifend vitae nunc sed tincidunt.</span>
+                          </div>
+                      </div>
+                  </div> -->
+                  <!-- <div>
+                      <div>
+                          <div class="negative-count opinion-header">
+                              <span>negative</span>
+                              <span>13</span>
+                          </div>
+                          <div>
+                              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id congue dolor. Vivamus eleifend vitae nunc sed tincidunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id congue dolor. Vivamus eleifend vitae nunc sed tincidunt.</span>
+                          </div>
+                      </div>
+                  </div> -->
+              </div>
+          </div>
+        </div>
+       
+      </div>
+      </ion-content>
+
+
+
+      

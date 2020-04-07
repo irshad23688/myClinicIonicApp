@@ -14,7 +14,7 @@
     --background: #fff;
     box-shadow: none;
     -webkit-box-shadow: none;
-    overflow: scroll;
+   // overflow: scroll;
   }
   .input {
     background-color: rgb(240, 240, 240);
@@ -39,7 +39,7 @@
     width: 1.25em !important;
   }
   .grid {
-    height: 100vh;
+   // height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

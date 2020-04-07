@@ -10,6 +10,7 @@ import { LoadingController } from '@ionic/angular';
 export class PatientsPage implements OnInit {
   public patientList;
   tableData :[];
+  searchText;
   constructor(public af:AngularFireDatabase, private loadingCtrl: LoadingController) { 
   }
 
@@ -35,6 +36,8 @@ async present() {
 async dismiss() {
   return await this.loadingCtrl.dismiss().then(() => console.log('dismissed'));
 }
+
+
 
 
 }
